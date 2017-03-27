@@ -1,0 +1,97 @@
+File:    README
+Author:  Dan Brekke
+Program: class example
+Date:    
+
+BUILDING THE PROGRAM
+   This program was written in C++ and distributed to be built on a 
+   Linux system.  To build the program, type 'make' to create the 
+   executable called 'prog'
+
+RUNNING THE PROGRAM
+   Type 'prog' at the command prompt after building the program.
+
+PROGRAM DESCRIPTION
+   This program will read ints from the file 'data' and summary
+   will be written to the file 'results'  This includes the ints
+   themselves, the average value, and the biggest value.
+
+PROGRAM INPUT
+   All input comes from the file 'data' that must exist prior to the
+   execution of the program.  The program will read the input file
+   until end of file is reached.  The format of the input file follows:
+      int1
+      int2
+      ...
+      intN
+   For example:
+      23
+      54
+      17
+   Since the input is ints, they could also be space separated.
+   
+PROGRAM OUTPUT
+   All output is written to 'results' containing the summary. The
+   summary includes input ints themselves, the average of the values,
+   and the biggest value.
+
+   For example:
+      numbers in the array: 23 54 17 
+      average is 31.33
+      the biggest is 54
+
+PROGRAM DESIGN
+   This program stores all the ints in an array.
+
+   The general algorithm
+      read the ints into an array
+      output the array
+      output the average
+      output the biggest
+
+   Function input and output, preconditions and postconditions can
+   be found in the documentation for each file.
+
+FILE INDEX
+   file             function(s)        description
+   --------------   -----------------  ----------------------
+   biggest.cpp      biggest            returns the biggest value in the array
+   
+   constants.h                         constant declarations
+   
+   data                                the input file
+   
+   findavg.cpp      findavg            returns the average value in the array
+                    findsum            returns the sum of the array
+
+   main.cpp         main               calls all other functions
+   
+   NOTES                               describes purpose of this class example
+
+   output.cpp       output             outputs results to the file 'results'
+   
+   read.cpp         read               read the file 'data' into the array
+
+   makefile                            builds executable
+
+   README                              this file
+
+   results                             file created containing output
+
+
+PROGRAM TESTING
+   This program was tested with different sets of data.  
+
+   Checked for a normal set of data in the file
+   
+   Checked for the number of values exceeding the array size
+   
+   Checked for data file not existing
+   
+   Checked for the data file existing but not containing any values
+   
+   Checked for the data file containing 1 value
+
+   There are no known bugs.  Any errors should be reported to:
+   brekke@mnstate.edu
+

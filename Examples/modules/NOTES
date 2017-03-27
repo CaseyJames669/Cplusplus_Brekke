@@ -1,0 +1,6 @@
+This distribution demonstrates multiple things
+1) modularization (putting functions in separate files)
+   - function prototypes
+2) makefile (to make compiling and linking of modules more convenient)
+3) file input and output (including passing a file stream to a function)
+4) using a header file for constants

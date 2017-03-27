@@ -1,0 +1,73 @@
+// File: search.cpp
+// Author: Casey Bladow
+// Program: Asmt5
+// Date: 2-24-13
+
+//Description: 
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+// Function: 
+// Description: 
+// Input: 
+// Output: 
+//	   
+// Preconditions: 
+// Postcondtions: 
+//			
+//
+
+void search(ofstream& out, const int numbers[], int count, int searchvalue, int& smallestindex, int& largestindex, int& matches)
+{
+  ofstream ofs;
+  int searchInt = 0;
+  int i;
+  
+  cout << "Enter an integer to search for in the array: ";
+  cin >> searchInt;
+ 
+  int flag = 0;
+  int flag2 = 0;
+  
+  //iterates through numbers and checks to see if value is in
+  //array.
+  for (i = 0; i < count; i++)
+    if (numbers[i] == searchInt)
+    {
+      flag = 1;
+      break;
+    }
+    
+  if (flag)
+  {
+    out << "The smallest index for the integer you searched for is in numbers[" << i << "]." << endl;
+    
+    
+    //find the last index value for searched int.
+    for (i = 9; i >= 0; i--)
+      if (numbers[i] == searchInt)
+      {
+	flag2 = 1;
+	break;
+      }
+    if (flag2)
+    {
+    out << "The largest index for the integer you searched for is in numbers[" << i << "]." << endl;
+    }
+    
+    //itterates through and counts how many times the search value appears
+    for (i = 0; i < count; i++)
+    if (numbers[i] == searchInt)
+    {
+      matches++;
+    }
+    
+    out << "The integer " << searchInt << " appears " << matches << " times." << endl;
+  }
+  else
+  {
+    out << "The integer you searched for is not in the array." << endl;
+  }
+}

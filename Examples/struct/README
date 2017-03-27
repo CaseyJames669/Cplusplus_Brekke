@@ -1,0 +1,140 @@
+File:    README
+Author:  Dan Brekke
+Date:    
+Class:   CSIS 252
+Program: class example
+
+BUILDING THE PROGRAM
+   This program was written in C++ and distributed to be built on a 
+   Linux system.  To build the program, type 'make' to create the 
+   executable called 'prog'
+
+RUNNING THE PROGRAM
+   Type 'prog' at the command prompt after building the program.
+
+PROGRAM DESCRIPTION
+   This program will read from the file 'scores' that consists of student
+   test data for a single test.  The program will calculate the summary
+   for the test and output it to the file 'results'
+
+PROGRAM INPUT
+   All input comes from the file 'scores' that must exist prior to the
+   execution of the program.  The program will read the input file
+   until end of file is reached.  The format of the input file follows:
+
+   maximum test score
+   student 1 name
+   student 1 test score
+   student 2 name
+   student 2 test score
+   ...
+   student n name
+   student n test score
+
+   For example:
+
+   150
+   Jim Nasium
+   118
+   Frank Furter
+   136
+
+PROGRAM OUTPUT
+   All output is written to 'results' containing the test summary. The
+   summary includes information for each student including the input
+   and percentages and letters.  The data for the students will be 
+   reported in descending order according to their test score.
+   In addition, summary data for all students is produced including 
+   high, low, average, and median scores.
+
+   For example:
+
+   Name                 score    pct   grade
+   ------------------   -----  ------  -----
+   Frank Furter          136   90.67%    A
+   Jim Nasium            118   78.67%    C
+
+   maximum score: 150
+   high score: 136
+   low score: 118
+   average score: 127.00
+   median score: 127.00
+
+PROGRAM DESIGN
+   This program stores all student data in an array of structs.  Each
+   struct stores the student's name, score, test pct, and letter grade.
+
+   The overall test summary is stored in a struct consisting of fields
+   for the high, low, average, and median test scores.
+
+   The general algorithm
+      read the data and store in students
+      sort the students descendingly according to their test scores
+      calculate the pecentages and grades for each student
+      calculate the summary data
+      output the results
+
+   Function input and output, preconditions and postconditions can
+   be found in the documentation for each file.
+
+FILE INDEX
+   file             function(s)        description
+   --------------   -----------------  ----------------------
+   calcavg.cpp      calcavg            calculates avg test score
+
+   calcmedian.cpp   calcmedian         calculates median test score
+
+   calculate.cpp    calculate          calculate student pct and grade
+                                       for each student
+                    calcgrade          calculates letter grade
+
+   constants.h                         constant declarations
+
+   decl.h                              struct declarations
+
+   main.cpp         main               calls all other functions
+
+   makefile                            builds executable
+
+   output.cpp       output             outputs all results to the
+                                       file 'results'
+
+   prototypes.h                        function prototypes
+
+   read.cpp         read               reads all input from the
+                                       file 'scores'
+
+   README                              this file
+
+   results                             file created containing output
+
+   scores                              student data (must pre-exist)
+
+   sort.cpp         sort               sorts student data descendingly
+                                       according to test score
+
+   summary.cpp      summary            calculates summary data
+                                       calls calcavg, calcmedian
+
+PROGRAM TESTING
+   This program was tested with different sets of data.  A requirement
+   is that the input file is in proper format so there is no error
+   checking to that regards.
+
+   Checked for boundary data where students achieved exactly 90%, 80%,
+   etc. and for students achieving close to a boundary like 89.5%
+
+   Checked for an even number and an odd number of students to check
+   correctness of the median.
+
+   Checked percentages for a maximum test score other than 100.
+
+   Checked for the number of students in the data file exceeding the
+   array of structs size.  In this case, all "extra" students are
+   ignored and a warning message is output to the screen.  The 
+   program proceeds only for the students that were read. 
+
+   There are no known bugs as long as the input file is correct and
+   in the proper format.  Any errors should be reported to:
+   brekke@mnstate.edu
+

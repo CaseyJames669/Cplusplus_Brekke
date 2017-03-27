@@ -1,0 +1,149 @@
+File:    README
+Author:  Casey Bladow
+Date:    3-4-14
+Class:   CSIS 252
+Program: payroll
+
+BUILDING THE PROGRAM
+   This program was written in C++ and distributed to be built on a 
+   Linux system.  To build the program, type 'make' to create the 
+   executable called 'prog'
+
+RUNNING THE PROGRAM
+   Type 'prog' at the command prompt after building the program.
+
+PROGRAM DESCRIPTION
+   This program will read from the file 'data' that consists of employee
+   data.  The program will calculate the summary for the employees
+   and output it to the file 'payroll'
+
+PROGRAM INPUT
+   All input comes from the file 'data' that must exist prior to the
+   execution of the program.  The program will read the input file
+   until end of file is reached.  The format of the input file follows:
+
+   name1
+   hours1
+   wage1
+   name2
+   hours2
+   wage2
+   etc.
+
+   For example:
+   
+   John Doe
+   10
+   20.00
+   Jane Doe
+   40
+   10.00
+   Joe Doe
+   50
+   10.00
+
+
+PROGRAM OUTPUT
+   All output is written to 'payroll' containing the employee summary. The
+   summary includes information for each employee including the input
+   and hours and wages.
+   In addition, summary data for all employees is produced including 
+   total gross pay, total federal withholding, total social security
+   withholding, and total net pay.
+
+   For example:
+
+   Employee Summary Totals
+   -----------------------
+   Total Gross Pay: 1150.00
+   Total Federal Withholding: 100.50
+   Total Social Security Withholding: 92.00
+   Total Net Pay: 957.50
+   Name                   hrs     wage   gross     fed      SS     net
+   ------------------     -----  -----   -----   -----      --     ---
+   John Doe               10     20.00  200.00    8.00   16.00  176.00
+   Jane Doe               40     10.00  400.00   32.00   32.00  336.00
+   Joe Doe                50     10.00  550.00   60.50   44.00  445.50
+
+
+
+PROGRAM DESIGN
+   This program stores all employee data in an array of structs.  Each
+   struct stores the employee's name, hours worked, wage, gross amount,
+   federal amount withheld, social security amount withheld, net amount
+   recieved.
+
+   The overall employee summary is stored in a struct consisting of fields
+   for the otal gross pay, total federal amount withheld, total social
+   security amount witheld, and total net pay.
+
+   The general algorithm
+      read the data and store in employees
+      calculate the gross amount for each employee
+      calculate the federal amount witheld for each employee
+      calculate the social security amount for each employee
+      calculate the net pay for each employee
+      calculate the summary data
+      output the results      
+      
+   Function input and output, preconditions and postconditions can
+   be found in the documentation for each file.
+
+FILE INDEX
+   file             function(s)        description
+   --------------   -----------------  ----------------------
+   constants.h                         constant declarations
+   
+   data                                employee data (must pre-exist)
+
+   decl.h                              struct declarations
+   
+   fed.cpp	     fed  		calculates federal withheld amount
+
+   fedTotal.cpp     fedTotal           calculates total federal withheld amount
+   
+   gross.cpp	    gross  		calculates gross amount
+   
+   grossTotal.cpp   grossTotal         calculates total gross amount
+   
+   main.cpp         main               calls all other functions
+
+   makefile                            builds executable
+   
+   net.cpp	     net  		calculates net amount
+
+   netTotal.cpp     netTotal           calculates total net amount
+
+   output.cpp       output             outputs all results to the
+                                       file 'payroll'
+                                       
+   payroll                             file created containing output
+
+   prototypes.h                        function prototypes
+
+   read.cpp         read               reads all input from the
+                                       file 'scores'
+
+   README                              this file
+   
+   ss.cpp	     ss  		calculates social security withheld amount
+
+   ssTotal.cpp      ssTotal             calculates total social security withheld amount
+
+   summary.cpp      summary            calculates summary data
+                                       calls calcavg, calcmedian
+
+PROGRAM TESTING
+   This program was tested with different sets of data.  A requirement
+   is that the input file is in proper format so there is no error
+   checking to that regards.
+
+   Checked for the number of employees in the data file exceeding the
+   array of structs size.  In this case, all "extra" employees are
+   ignored and a warning message is output to the screen.  The 
+   program proceeds only for the employees that were read. 
+
+   There are no known bugs as long as the input file is correct and
+   in the proper format.  Any errors should be reported to:
+   bladowca@mnstate.edu
+

@@ -1,0 +1,23 @@
+void read(int numbers[], int& count)
+
+void output(const int numbers[], int count)
+
+double findaverage(const int numbers[],int count)
+
+int lessThanAvg(const int numbers[], int count, double average)
+
+int greaterThanAvg(const int numbers[], int count, double average)
+
+void findSmallest(const int numbers[], int count,
+                   int& smallest, int& index)
+
+void findLargest(const int numbers[], int count,
+                   int& largest, int& index)
+
+int evens(const int numbers[], int count)
+
+int odds(const int numbers[], int count)
+
+void search(const int numbers[], int count, int searchvalue,
+             int& smallestindex, int& largestindex, int& matches)
+

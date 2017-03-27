@@ -1,0 +1,28 @@
+// File:    calculate.cpp
+// Author:  Dan Brekke
+// Date:    
+// Class:   CSIS 252
+// Program: class example
+
+// This file contains the calculate and the calgrade functions
+
+#include "decl.h"
+
+// function: calculate
+// description: This function will will calculate the average and letter
+//              grade for each student and store them in the
+//              array of structs.
+// function input:  testsummary - struct containing maximum test score
+//                  students - student data (array of structs)
+//                  count - number of students (int)
+// function output: students - pct and grade calculated for each student
+// preconditions:   students and count are correct
+// postconditions:  students array is updated to include pct and grade
+void ss(summaryType employeesummary,employeeType employees[],int count)
+{
+   for (int i=0; i<count; i++)
+   {
+       double ss = employees[i].gross * .08;
+       employees[i].ss = ss;
+   }
+}

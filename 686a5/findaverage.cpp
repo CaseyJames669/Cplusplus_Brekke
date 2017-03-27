@@ -1,0 +1,39 @@
+// File: findaverage.cpp
+// Author: Casey Bladow
+// Program: Asmt5
+// Date: 2-24-14
+
+//Description: This file contains the functions findsum and findaverage
+
+// Function: findsum
+// Description: find the sum of the array
+// Input: numbers (array of int)
+//	  count (int) - the number of values in the array
+// Output: sum (int) - the sum of the values in the array
+//	   
+// Preconditions: <none>
+// Postcondtions: the sum of the values in the array is returned
+
+int findsum(const int numbers[], int count)
+{
+  int sum = 0;
+  int i;
+  for (i = 0; i < count; i++)
+    sum += numbers[i];
+  return sum;
+}
+
+// Function: findaverage
+// Description: find the average value in the array
+// Input: numbers (array of int)
+//	  count (int) - the number of values in the array
+// Output: average (double) - the average of the values in the array
+// Preconditions: there must be at least 1 value in the array
+// Postcondtions: the aver of the values in the array is returned
+
+double findaverage(const int numbers[], int count)
+{
+  double average;
+  average = static_cast<double>(findsum(numbers, count)) / count;
+  return average;
+}

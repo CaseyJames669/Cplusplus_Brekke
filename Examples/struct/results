@@ -1,0 +1,18 @@
+Name                 score    pct   grade
+------------------   -----  ------  -----
+Chris Cross           150  100.00%    A
+Frank Furter          135   90.00%    A
+Jim Nasium            134   89.33%    B
+Candy Cane            120   80.00%    B
+Myles Long            119   79.33%    C
+Tim Burr              105   70.00%    C
+Bill Ding             104   69.33%    D
+John Doe              100   66.67%    D
+Polly Ester            90   60.00%    D
+Hazel Nutt             89   59.33%    F
+
+maximum score: 150
+high score: 150
+low score: 89
+average score: 114.60
+median score: 112.00

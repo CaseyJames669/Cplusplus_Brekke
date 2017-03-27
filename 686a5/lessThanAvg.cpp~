@@ -1,0 +1,33 @@
+// File: lessThanAvg.cpp
+// Author: Casey Bladow
+// Program: Asmt5
+// Date: 2-24-13
+
+//Description: 
+
+// Function: 
+// Description: 
+// Input: 
+// Output: 
+//	   
+// Preconditions: 
+// Postcondtions: 
+//			
+//
+double findaverage(const int numbers[], int count);
+
+int lessThanAvg(const int numbers[], int count, double average)
+{
+  int i;
+  int temp = 0;
+  int lessThanAverage = 0;
+  average = findaverage(numbers, count);
+  
+  //cout << fixed << setprecision(0);
+  for (i = 0; i < count; i++)
+    if (numbers[i] < average)
+      lessThanAverage++;
+    else
+      temp++;
+    return lessThanAverage;
+}

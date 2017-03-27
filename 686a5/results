@@ -1,0 +1,12 @@
+Entered Array: 4 6 8 5 3 6 7 
+Average is: 5.57
+Number of ints that are less than average: 3
+Number of ints that are greater than average: 4
+Smallest integer was 3. Indexed in numbers[4].
+Largest integer was 8. Indexed in numbers[2].
+Number of Even Integers: 4
+Number of Odd Integers: 3
+Sorted Array: 3 4 5 6 6 7 8 
+The smallest index for the integer you searched for is in numbers[3].
+The largest index for the integer you searched for is in numbers[4].
+The integer 6 appears 2 times.
